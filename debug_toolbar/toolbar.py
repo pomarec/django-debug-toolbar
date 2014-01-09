@@ -67,7 +67,7 @@ class DebugToolbar(object):
             context = {'toolbar': self}
             return render_to_string('debug_toolbar/base.html', context)
         except TemplateSyntaxError:
-            if django.VERSION[:2] >= (1, 7):
+            """if django.VERSION[:2] >= (1, 7):
                 from django.apps import apps
                 staticfiles_installed = apps.is_installed(
                     'django.contrib.staticfiles')
@@ -80,7 +80,8 @@ class DebugToolbar(object):
                     "Add 'django.contrib.staticfiles' to INSTALLED_APPS and "
                     "define STATIC_URL in your settings.")
             else:
-                raise
+                raise"""
+            raise
 
     # Handle storing toolbars in memory and fetching them later on
 
